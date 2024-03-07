@@ -1,0 +1,1163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A guide on how to integrate ChatGPT with a Telegram bot using instructor package">
+      
+      
+        <meta name="author" content="OtegaliA">
+      
+      
+        <link rel="canonical" href="https://aotegaliyev.github.io/telegrambot-ai-integration-guide/app-guide/">
+      
+      
+        <link rel="prev" href="../project-setup/">
+      
+      
+        <link rel="next" href="../gpt-integration/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Application initialization - Telegram Bot AI Integration Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Application initialization - Telegram Bot AI Integration Guide" >
+      
+        <meta  property="og:description"  content="A guide on how to integrate ChatGPT with a Telegram bot using instructor package" >
+      
+        <meta  property="og:image"  content="https://aotegaliyev.github.io/telegrambot-ai-integration-guide/assets/images/social/app-guide.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://aotegaliyev.github.io/telegrambot-ai-integration-guide/app-guide/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Application initialization - Telegram Bot AI Integration Guide" >
+      
+        <meta  name="twitter:description"  content="A guide on how to integrate ChatGPT with a Telegram bot using instructor package" >
+      
+        <meta  name="twitter:image"  content="https://aotegaliyev.github.io/telegrambot-ai-integration-guide/assets/images/social/app-guide.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#application-initialization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Telegram Bot AI Integration Guide" class="md-header__button md-logo" aria-label="Telegram Bot AI Integration Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 9h3l-5 7m-4-7h4l-2 8M5 9h3l2 7m5-12h2l2 3h-3m-5-3h2l1 3h-4M7 4h2L8 7H5m1-5L2 8l10 14L22 8l-4-6H6Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Telegram Bot AI Integration Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Application initialization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aotegaliyev/telegrambot-ai-integration-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aotegaliyev/telegrambot-ai-integration-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<!-- Determine classes -->
+
+
+
+
+<!-- Navigation -->
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+    <!-- Site title -->
+    <label class="md-nav__title" for="__drawer">
+        <a href=".." title="Telegram Bot AI Integration Guide"
+            class="md-nav__button md-logo" aria-label="Telegram Bot AI Integration Guide" data-md-component="logo">
+            
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 9h3l-5 7m-4-7h4l-2 8M5 9h3l2 7m5-12h2l2 3h-3m-5-3h2l1 3h-4M7 4h2L8 7H5m1-5L2 8l10 14L22 8l-4-6H6Z"/></svg>
+
+        </a>
+        Content
+    </label>
+
+    <!-- Repository information -->
+    
+    <div class="md-nav__source">
+        <a href="https://github.com/aotegaliyev/telegrambot-ai-integration-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aotegaliyev/telegrambot-ai-integration-guide
+  </div>
+</a>
+    </div>
+    
+
+    <!-- Navigation list -->
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+        
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting Up the Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+        
+        
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Application initialization
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Application initialization
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-env-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create ENV variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-initializing-telegram-bot-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Initializing telegram bot application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-initializing-fastapi-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Initializing FastAPI application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-bot-message-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Bot Message Updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Bot Message Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-handle-star-help-contact-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Handle star, help, contact commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Handle star, help, contact commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-handlers-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Handlers results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-menu-keyboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Define menu keyboards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Define menu keyboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-keyboards-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Keyboards results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-handling-various-bot-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Handling various bot interactions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Handling various bot interactions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-command-handlers-our-bots-reflexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Command Handlers – Our Bot's Reflexes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-message-handlers-the-bots-sixth-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Message Handlers – The Bot's Sixth Sense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-task-to-algorithm-handler-the-bots-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Task to algorithm handler - The Bot's Intuition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+        
+        
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gpt-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🍒 ChatGPT integration with Application
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+        
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Results & Final Thoughts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-env-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create ENV variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-initializing-telegram-bot-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Initializing telegram bot application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-initializing-fastapi-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Initializing FastAPI application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-bot-message-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Bot Message Updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Bot Message Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-handle-star-help-contact-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Handle star, help, contact commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Handle star, help, contact commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-handlers-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Handlers results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-menu-keyboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Define menu keyboards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Define menu keyboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-keyboards-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Keyboards results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-handling-various-bot-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Handling various bot interactions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Handling various bot interactions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-command-handlers-our-bots-reflexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Command Handlers – Our Bot's Reflexes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-message-handlers-the-bots-sixth-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Message Handlers – The Bot's Sixth Sense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-task-to-algorithm-handler-the-bots-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Task to algorithm handler - The Bot's Intuition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Application initialization</h1>
+
+<div><h2 id="application-initialization"><strong>Application Initialization</strong><a class="headerlink" href="#application-initialization" title="Permanent link">¶</a></h2>
+<p>Next, we need to initialize the FastAPI application. Before the server starts, we must also initialize the python-telegram-bot within it. We will store the main logic in the <code>app.py</code> file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Techie Alert in Tutorial Town!</p>
+<p>Hey there, savvy coder! Before you dive headfirst into the cool waters of bot-making, let's not forget our digital life jackets: the imports! Imagine them as your coding BFFs, always there to back you up. Without these trusty imports, your bot might just end up swimming with the digital fishes.</p>
+</div>
+<h3 id="1-create-env-variables">1. <strong>Create ENV variables</strong><a class="headerlink" href="#1-create-env-variables" title="Permanent link">¶</a></h3>
+<p>Before starting, let's define the environment variables in a <code>.env</code> file located next to the <code>app.py</code> file, and load them in <code>settings.py</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+    <span class="n">BOT_TOKEN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'BOT_TOKEN'</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="2-initializing-telegram-bot-application">2. <strong>Initializing telegram bot application</strong><a class="headerlink" href="#2-initializing-telegram-bot-application" title="Permanent link">¶</a></h3>
+<p>And then in <code>app.py</code> we should initialize python telegram bot application.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Application</span>
+
+<span class="n">ptb</span> <span class="o">=</span> <span class="n">Application</span><span class="o">.</span><span class="n">builder</span><span class="p">()</span><span class="o">.</span><span class="n">token</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">BOT_TOKEN</span><span class="p">)</span><span class="o">.</span><span class="n">updater</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="3-initializing-fastapi-application">3. <strong>Initializing FastAPI application</strong><a class="headerlink" href="#3-initializing-fastapi-application" title="Permanent link">¶</a></h3>
+<p>After this we should define Fast api application with following lifespan:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Updater</span>
+
+
+<span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
+    <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="n">ptb</span><span class="o">.</span><span class="n">bot</span><span class="p">,</span> <span class="n">update_queue</span><span class="o">=</span><span class="n">ptb</span><span class="o">.</span><span class="n">update_queue</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">updater</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">(</span><span class="n">poll_interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ptb</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">ptb</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">yield</span>
+        <span class="k">await</span> <span class="n">ptb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">lifespan</span><span class="o">=</span><span class="n">lifespan</span><span class="p">)</span>
+</code></pre></div>
+<p>Here we are polling message updates, to implement webhook logic as well we are going to add one more variable to our Config.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">URL</span> <span class="o">=</span>  <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'APP_URL'</span><span class="p">)</span>  <span class="c1"># https://example.com</span>
+</code></pre></div>
+<p>We should add webhook API that handles new message updates and our lifespan changes to</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">asynccontextmanager</span>
+
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">telegram</span> <span class="kn">import</span> <span class="n">Update</span>
+<span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Application</span><span class="p">,</span> <span class="n">Updater</span>
+
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">Config</span>
+
+<span class="n">ptb</span> <span class="o">=</span> <span class="n">Application</span><span class="o">.</span><span class="n">builder</span><span class="p">()</span><span class="o">.</span><span class="n">token</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">TOKEN</span><span class="p">)</span><span class="o">.</span><span class="n">updater</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+
+<span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Config</span><span class="o">.</span><span class="n">URL</span><span class="p">:</span>
+        <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="n">ptb</span><span class="o">.</span><span class="n">bot</span><span class="p">,</span> <span class="n">update_queue</span><span class="o">=</span><span class="n">ptb</span><span class="o">.</span><span class="n">update_queue</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">updater</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+        <span class="k">await</span> <span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">(</span><span class="n">poll_interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">ptb</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">Config</span><span class="o">.</span><span class="n">URL</span><span class="si">}</span><span class="s1">/telegram'</span><span class="p">,</span>
+            <span class="n">allowed_updates</span><span class="o">=</span><span class="n">Update</span><span class="o">.</span><span class="n">ALL_TYPES</span><span class="p">,</span>
+            <span class="n">drop_pending_updates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ptb</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">ptb</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">yield</span>
+        <span class="k">await</span> <span class="n">ptb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">lifespan</span><span class="o">=</span><span class="n">lifespan</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'/telegram'</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">process_update</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="k">await</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>  <span class="c1"># Get message updates</span>
+    <span class="k">await</span> <span class="n">ptb</span><span class="o">.</span><span class="n">update_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">req</span><span class="p">,</span> <span class="n">bot</span><span class="o">=</span><span class="n">ptb</span><span class="o">.</span><span class="n">bot</span><span class="p">))</span>  <span class="c1"># Put message to queue</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># Return success response</span>
+</code></pre></div>
+<p>In this setup, If the config URL is set, we handle messages by webhook; otherwise, we start polling.</p>
+<h2 id="managing-bot-message-updates"><strong>Managing Bot Message Updates</strong><a class="headerlink" href="#managing-bot-message-updates" title="Permanent link">¶</a></h2>
+<p>Now we can create bot application routes to handle bot commands and actions.</p>
+<p>There we should add taskalgobot module that contains <code>handlers.py</code> that consists actions logic and <code>keyboards.py</code> file that saves telegram keyboards.</p>
+<h3 id="1-handle-star-help-contact-commands">1. <strong>Handle star, help, contact commands</strong><a class="headerlink" href="#1-handle-star-help-contact-commands" title="Permanent link">¶</a></h3>
+<p>For instance to start bot and get help about bot we should define commands logic</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># handlers.py</span>
+<span class="kn">from</span> <span class="nn">telegram</span> <span class="kn">import</span> <span class="n">Update</span>
+<span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">ContextTypes</span>
+
+<span class="kn">from</span> <span class="nn">taskalgobot</span> <span class="kn">import</span> <span class="n">keyboards</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">text_with_menu</span><span class="p">(</span><span class="n">update</span><span class="p">:</span> <span class="n">Update</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">await</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+        <span class="n">reply_markup</span><span class="o">=</span><span class="n">keyboards</span><span class="o">.</span><span class="n">menu_keyboards</span><span class="p">(),</span>
+    <span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">start_command</span><span class="p">(</span>
+    <span class="n">update</span><span class="p">:</span> <span class="n">Update</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">ContextTypes</span><span class="o">.</span><span class="n">DEFAULT_TYPE</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">'Hi! I can convert your task to algorithms.'</span>
+    <span class="p">)</span>
+    <span class="k">await</span> <span class="n">text_with_menu</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">help_command</span><span class="p">(</span>
+    <span class="n">update</span><span class="p">:</span> <span class="n">Update</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">ContextTypes</span><span class="o">.</span><span class="n">DEFAULT_TYPE</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">'Hi! I can convert your task to algorithms.</span><span class="se">\n</span><span class="s1">'</span>
+        <span class="s1">'Advice: 📝 Start typing to request algorithms without commands</span><span class="se">\n</span><span class="s1">'</span>
+        <span class="s1">'Commands:</span><span class="se">\n\n</span><span class="s1">'</span>
+        <span class="s1">'🙋‍♂️ /help — This is what you see</span><span class="se">\n</span><span class="s1">'</span>
+        <span class="s1">'📞 /contact — Contact us if you have any questions :)'</span>
+    <span class="p">)</span>
+    <span class="k">await</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">contact_command</span><span class="p">(</span>
+    <span class="n">update</span><span class="p">:</span> <span class="n">Update</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">ContextTypes</span><span class="o">.</span><span class="n">DEFAULT_TYPE</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">'This function is developed as an example.'</span>
+    <span class="p">)</span>
+    <span class="k">await</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="11-handlers-results">1.1 <strong>Handlers results</strong><a class="headerlink" href="#11-handlers-results" title="Permanent link">¶</a></h4>
+<p>Here in screenshot 2 we can see bot commands results.</p>
+<p><img alt="Demo" src="../images/demobot.png" width="300"></p>
+<p><em>screenshot 2</em></p>
+<h3 id="2-define-menu-keyboards">2 <strong>Define menu keyboards</strong><a class="headerlink" href="#2-define-menu-keyboards" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># keyboards.py</span>
+<span class="kn">from</span> <span class="nn">telegram</span> <span class="kn">import</span> <span class="n">ReplyKeyboardMarkup</span>
+
+
+<span class="k">def</span> <span class="nf">menu_keyboards</span><span class="p">():</span>
+    <span class="n">reply_keyboard</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s1">'Create task 📝'</span><span class="p">,</span>
+            <span class="s1">'Help 🙋‍♂️'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">'Contact us 📞'</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">ReplyKeyboardMarkup</span><span class="p">(</span>
+        <span class="n">reply_keyboard</span><span class="p">,</span>
+        <span class="n">one_time_keyboard</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">resize_keyboard</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<h4 id="21-keyboards-results">2.1 <strong>Keyboards results</strong><a class="headerlink" href="#21-keyboards-results" title="Permanent link">¶</a></h4>
+<p>This keyboards will look like (screenshot 3):</p>
+<p><img alt="Demo 2" src="../images/menukeyboards.png" width="300"></p>
+<p><em>screenshot 3</em></p>
+<h3 id="3-handling-various-bot-interactions">3 <strong>Handling various bot interactions</strong><a class="headerlink" href="#3-handling-various-bot-interactions" title="Permanent link">¶</a></h3>
+<p>In <code>app.py</code> file, we're using a Python Telegram Bot (ptb) application object which is crucial for handling various bot interactions.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># app.py</span>
+<span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Application</span><span class="p">,</span>
+    <span class="n">CallbackQueryHandler</span><span class="p">,</span>
+    <span class="n">CommandHandler</span><span class="p">,</span>
+    <span class="n">MessageHandler</span><span class="p">,</span>
+    <span class="n">ConversationHandler</span><span class="p">,</span>
+    <span class="n">filters</span><span class="p">,</span>
+    <span class="n">Updater</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="o">...</span>
+
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">start_command</span><span class="p">))</span>
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">'help'</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">help_command</span><span class="p">))</span>
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">'contact'</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">contact_command</span><span class="p">))</span>
+
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">Regex</span><span class="p">(</span><span class="s2">"^(Create task 📝)"</span><span class="p">),</span> <span class="n">handlers</span><span class="o">.</span><span class="n">start_command</span><span class="p">))</span>
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">Regex</span><span class="p">(</span><span class="s2">"^(Help 🙋‍♂️)"</span><span class="p">),</span> <span class="n">handlers</span><span class="o">.</span><span class="n">help_command</span><span class="p">))</span>
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">Regex</span><span class="p">(</span><span class="s2">"^(Contact us 📞)"</span><span class="p">),</span> <span class="n">handlers</span><span class="o">.</span><span class="n">contact_command</span><span class="p">))</span>
+
+<span class="n">ptb</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">TEXT</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">filters</span><span class="o">.</span><span class="n">COMMAND</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">handle_task_to_algo</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="31-command-handlers-our-bots-reflexes">3.1 <strong>Command Handlers – Our Bot's Reflexes:</strong><a class="headerlink" href="#31-command-handlers-our-bots-reflexes" title="Permanent link">¶</a></h4>
+<ul>
+<li>When someone types /start, our bot jumps into action with handlers.start_command. It's like saying "Hello, world!" but way cooler.</li>
+<li>Need help? Just hit /help, and our handlers.help_command is there like a friendly neighborhood superhero.</li>
+</ul>
+<h4 id="33-message-handlers-the-bots-sixth-sense">3.3 <strong>Message Handlers – The Bot's Sixth Sense</strong><a class="headerlink" href="#33-message-handlers-the-bots-sixth-sense" title="Permanent link">¶</a></h4>
+<ul>
+<li>When users get creative and type things like <strong>"Create task 📝"</strong>, our bot knows it's showtime, calling handlers.start_command to get the ball rolling.</li>
+<li>Do you need <strong>"Help 🙋‍♂️"</strong> with <strong><em>BOT</em></strong>? They've got no secrets from us. Our bot knows exactly what to do, routing them to the right helper functions.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>"Contact us 📞"</strong> has just made for demonstration purposes :)</p>
+</div>
+<h4 id="34-task-to-algorithm-handler-the-bots-intuition">3.4 <strong>Task to algorithm handler - The Bot's Intuition</strong><a class="headerlink" href="#34-task-to-algorithm-handler-the-bots-intuition" title="Permanent link">¶</a></h4>
+<p>For all those times users just chat away, <strong><code>filters.TEXT &amp; ~filters.COMMAND</code></strong> ensures nothing slips through. Every message is a chance for <code>handlers.handle_task_to_algo</code> to shine, turning user chats into action plans.</p>
+<div class="admonition question">
+<p class="admonition-title">handlers.handle_task_to_algo</p>
+<p>This function hasn't been implemented yet – stay tuned and keep your cool! 😊</p>
+</div></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../project-setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setting Up the Project">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setting Up the Project
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../gpt-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: 🍒 ChatGPT integration with Application">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                🍒 ChatGPT integration with Application
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 OtegaliA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://t.me/a5eke" target="_blank" rel="noopener" title="Telegram Chat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/aotegaliyev" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "search.share", "navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
