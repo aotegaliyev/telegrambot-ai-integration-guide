@@ -3,8 +3,6 @@ site_name: Telegram Bot AI Integration Guide
 site_description: A guide on how to integrate ChatGPT with a Telegram bot using instructor package
 site_author: OtegaliA
 site_url: https://aotegaliyev.github.io/telegrambot-ai-integration-guide/
-docs_dir: docs
-site_dir: docs
 
 # Repository
 repo_name: aotegaliyev/telegrambot-ai-integration-guide
